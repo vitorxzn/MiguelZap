@@ -1,0 +1,17 @@
+.post-card {
+    background: var(--surface);
+    border: 3px solid #000;
+    border-radius: var(--radius-soft);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.post-media { width: 100%; display: block; border-bottom: 2px solid #000; }
+.post-info { padding: 15px; }
+.story-circle {
+    width: 65px; height: 65px;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    padding: 2px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
