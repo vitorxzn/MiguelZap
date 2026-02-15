@@ -1,0 +1,14 @@
+window.updateProfileData = async () => {
+    const photoURL = document.getElementById('profile-pic-url').value;
+    const statusNote = document.getElementById('user-status-note').value;
+    
+    await update(ref(db, `users/${user.uid}/profile`), {
+        photo: photoURL,
+        note: statusNote,
+        updatedAt: serverTimestamp()
+    });
+    
+    // Atualiza o avatar da barra lateral instantaneamente
+    document.getElementById('sidebar-avatar').src = photoURL;
+    alert("Perfil atualizado na base!");
+};
