@@ -12,3 +12,14 @@ window.updateProfileData = async () => {
     document.getElementById('sidebar-avatar').src = photoURL;
     alert("Perfil atualizado na base!");
 };
+window.createPost = async (type, url, caption) => {
+    const postData = {
+        userId: user.uid,
+        userName: user.displayName,
+        type: type, // 'image' ou 'video'
+        mediaUrl: url,
+        caption: caption,
+        timestamp: serverTimestamp()
+    };
+    await push(ref(db, 'posts'), postData);
+};
